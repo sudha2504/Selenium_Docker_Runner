@@ -25,8 +25,6 @@ services:
     - SE_NODE_MAX_SESSIONS=4
   vendor-portal:
     image: sudha0425/automationselenium
-    depends_on:
-    - chrome
     environment:
     - BROWSER=chrome
     - HUB_HOST=hub
@@ -36,8 +34,6 @@ services:
     - ./output/vendor-portal:/home/selenium-docker/test-output
   fligh-reservation:
     image: sudha0425/automationselenium
-    depends_on:
-    - chrome
     environment:
     - BROWSER=firefox
     - HUB_HOST=hub

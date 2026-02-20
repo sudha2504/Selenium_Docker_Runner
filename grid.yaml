@@ -1,0 +1,22 @@
+services:
+  hub:
+    image: selenium/hub
+    ports:
+      - 4444:4444
+  chrome :
+    shm_size: '2g'
+    image: selenium/node-chromium
+    depends_on:
+      - hub
+    env_file: .env
+    deploy:
+      replicas: 2
+  firefox:
+    shm_size: '2g'
+    image: selenium/node-firefox
+    depends_on:
+      - hub
+    env_file: .env
+    deploy:
+      replicas: 2
+
