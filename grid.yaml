@@ -10,7 +10,7 @@ services:
       - hub
     env_file: .env
     deploy:
-      replicas: 2
+      replicas: 1
   firefox:
     shm_size: '2g'
     image: selenium/node-firefox
@@ -18,5 +18,5 @@ services:
       - hub
     env_file: .env
     deploy:
-      replicas: 2
+      replicas: 1 
 

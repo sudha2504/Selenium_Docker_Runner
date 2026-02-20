@@ -5,7 +5,7 @@ pipeline {
 
          stage('Bring Grid up'){
            steps {
-             sh  "docker compose -f grid.yaml up"
+             sh  "docker compose -f grid.yaml up -d"
            }
          }
 
