@@ -2,7 +2,7 @@ services:
   vendor-portal:
     image: sudha0425/airlineselenium
     environment:
-    - BROWSER=chrome
+    - BROWSER
     - HUB_HOST=hub
     - THREAD_COUNT=2
     - TEST_SUITE=vendorTest.xml
@@ -11,7 +11,7 @@ services:
   fligh-reservation:
     image: sudha0425/airlineselenium
     environment:
-    - BROWSER=firefox
+    - BROWSER
     - HUB_HOST=hub
     - THREAD_COUNT=2
     - TEST_SUITE=flight-reservation.xml
