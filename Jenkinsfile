@@ -1,11 +1,15 @@
 pipeline {
     agent any
-
+    
+    parameters {
+      choice choices: ['firefox', 'chrome'], description: 'Select the Browser', name: 'BROWSER'
+    }
+ 
     stages{
 
          stage('Bring Grid up'){
            steps {
-             sh  "docker compose -f grid.yaml up -d"
+             sh  "docker compose -f grid.yaml up --scale ${params.BROWSER}=2 -d"
            }
          }
 
